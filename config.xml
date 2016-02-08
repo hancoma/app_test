@@ -46,7 +46,9 @@
      <gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
     <gap:plugin name="com.sharinglabs.cordova.plugin.cache" version="1.0.0" />
     
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" source="pgb" />
+  <preference name="showmessageinnotification" value="true" />
+<preference name="defaultnotificationmessage" value="새로운 메시지가 도착했습니다." />
     
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
