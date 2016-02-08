@@ -27,8 +27,93 @@
     <script src="js/uikit.min.js"></script>
     <script src="js/main.js"></script>
     <script src="http://pluspay.kr/js/map_app.js"></script>
-<script src="http://pluspay/js/main.js"></script>
 
+
+        
+    <script type="text/javascript">
+
+
+ 
+  
+ var pushNotification;
+
+            function onLoad() {
+         document.addEventListener("deviceready", onDeviceReady, false);
+}
+ function onDeviceReady() {
+        // Register the event listener
+        var uuid=device.uuid;
+            // uuid 정리 
+
+           
+  
+pushNotification = window.plugins.pushNotification;
+
+
+
+
+    pushNotification.register(
+        successHandler,
+        errorHandler, {
+            "senderID":"492152097523",
+            "badge":"true", // 뱃지 기능을 사용한다.
+                "sound":"true", // 사운드를 사용한다.
+                "alert":"true", // alert를 사용한다.
+            "ecb":"onNotificationGCM"
+        });
+            
+        document.addEventListener("backbutton", function(e)
+    {
+   
+
+      
+          end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
+    
+    }, false);
+
+
+  document.addEventListener("menubutton", function(e)
+    {
+       
+
+         end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
+         
+       }, false);
+
+
+ var success = function(status) {
+         navigator.notification.activityStop();
+        }
+
+        var error = function(status) {
+         navigator.notification.activityStop();
+        }
+navigator.notification.activityStart("pluspay", "자료준비중...");
+        window.cache.clear( success, error );
+
+    
+ 
+ 
+    }
+            
+    
+    
+   
+
+  
+
+    
+
+
+
+ 
+  
+    
+
+
+
+	
+		</script>
     </head>
     
     <body onload="onLoad()">
