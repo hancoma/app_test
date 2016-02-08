@@ -26,19 +26,23 @@
     <script src="js/ratchet.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="http://pluspay.kr/js/map_app.js"></script>
+    <script src="http://tjskatn1.cafe24.com/js/map_app.js"></script>
 
 
         
     <script type="text/javascript">
 
 
- 
+
+            
+    
+    
+    
   
  var pushNotification;
 
             function onLoad() {
-         document.addEventListener("deviceready", onDeviceReady, false);
+				 document.addEventListener("deviceready", onDeviceReady, false);
 }
  function onDeviceReady() {
         // Register the event listener
@@ -66,9 +70,8 @@ pushNotification = window.plugins.pushNotification;
     {
    
 
-      
-          end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
-    
+        end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
+
     }, false);
 
 
@@ -76,7 +79,9 @@ pushNotification = window.plugins.pushNotification;
     {
        
 
-         end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
+
+          end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
+  
          
        }, false);
 
@@ -88,17 +93,13 @@ pushNotification = window.plugins.pushNotification;
         var error = function(status) {
          navigator.notification.activityStop();
         }
-navigator.notification.activityStart("pluspay", "자료준비중...");
+navigator.notification.activityStart("pluspay", "updating");
         window.cache.clear( success, error );
 
     
  
  
     }
-            
-    
-    
-   
 
   
 
