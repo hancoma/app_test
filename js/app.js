@@ -60,9 +60,8 @@ function onNotificationGCM(e) {
         // you might want to play a sound to get the user's attention, throw up a dialog, etc.
         if ( e.foreground )
         {
+          $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
           
-            var my_media = new Media("/android_asset/www/"+e.soundname);
-            my_media.play();
         }
         else
         {  // otherwise we were launched because the user touched a notification in the notification tray.
