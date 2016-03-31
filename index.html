@@ -67,12 +67,13 @@ pushNotification = window.plugins.pushNotification;
             "ecb":"onNotificationGCM"
         });
             
-        document.addEventListener("backbutton", function(e)
+      // 뒤로가기 
+document.addEventListener("backbutton", function(e)
     {
    
 
-        end_btn(); // 종료 기능실행 map_app.js에 있음 (서버)
-
+     navigator.app.backHistory();
+    
     }, false);
 
 
