@@ -69,6 +69,12 @@ function onConfirm(buttonIndex) {
      // gopage("index.html?ok=ok");
 }
 
+function gopage (page) {
+    var page=page;
+    location.href=page;
+}
+
+
 function alert_msg(title,msg,btn) {
     // alert 대신 사용할 함수 
     var title=title;
