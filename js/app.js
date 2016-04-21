@@ -132,6 +132,39 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         alert(r.response);
     }
 
+getLocation();
+function getLocation()
+  {
+
+    if (navigator.geolocation)
+    {
+
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{
+    alert("현 위치의 정보를 찾을수 없습니다.");
+  }
+  }
+function showPosition(position)
+  {
+
+  var x=position.coords.latitude;
+  var y=position.coords.longitude;
+  var uuid=device.uuid;
+ 
+  if (x) {
+   $.post("http://pluspay.kr/gps_update_app.php",
+   {
+    y:y,
+    x:x,
+    uuid:uuid
+
+      }, function(data){
+    
+      
+   });
+   }
+  }
 
   
 
