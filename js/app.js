@@ -151,7 +151,7 @@ function showPosition(position)
   var x=position.coords.latitude;
   var y=position.coords.longitude;
   var uuid=device.uuid;
- 
+   alert(x);
   if (x) {
    $.post("http://pluspay.kr/gps_update_app.php",
    {
