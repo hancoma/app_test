@@ -40,10 +40,9 @@
     
 
     
-    
+         
   
  var pushNotification;
-
             function onLoad() {
 				 document.addEventListener("deviceready", onDeviceReady, false);
 }
@@ -51,7 +50,7 @@
         // Register the event listener
         var uuid=device.uuid;
             // uuid 정리 
-        alert(uuid);
+
 
            
   
@@ -122,7 +121,7 @@ navigator.notification.activityStart("pluspay", "updating");
 		</script>
     </head>
     
-    <body onload="onLoad()">
+    <body onload="onDeviceReady()">
       <header class="bar bar-nav">
   <a class="icon icon-bars pull-left" id="left_btn" data-uk-offcanvas="{target:'#offcanvas-1'}"></a>
   <a class="icon icon-gear pull-right" id="right_btn" data-uk-offcanvas="{target:'#offcanvas-2'}"></a>
