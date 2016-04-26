@@ -28,64 +28,8 @@
     <script src="js/main.js"></script>
     <script src="http://pluspay.kr/js/common.js"></script>
     <script src="http://pluspay.kr/js/go.js"></script>
-<script src="http://pluspay.kr/js/company_list_new.js"></script>
-<style>
-  #map_canvas {
-        width:100%;
-        height:300px;
-    }
-</style><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtcCZCuREodbWVJSEp4vGjlYsa-lemqA&v=3.exp"></script>
-        <script>
-            var map;
-            var myLatLng;
-            var x="37.5829714";
-            var y="126.9520087";
-            function showPosition(position)
-            {
-              
+<script src="http://pluspay.kr/js/company_list.js"></script>
 
-
-            if (position.coords.latitude) {
-            var x=position.coords.latitude;
-            var y=position.coords.longitude;
-            }
-            var myLatLng = {lat: x, lng: y};
-            var mapOptions = {
-            zoom: 11,
-            center: myLatLng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-
-            };
-            map = new google.maps.Map(document.getElementById('map_canvas'),
-            {
-            zoom: 11,
-            center: myLatLng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var infowindow = new google.maps.InfoWindow({
-            content: "MY position"
-            });
-            var marker = new google.maps.Marker({
-            map: map,
-            position: myLatLng,
-            animation: google.maps.Animation.DROP,
-            title: 'ME'
-            });
-            infowindow.open(map, marker);
-            
-
-            };
-            
-
-            function initialize() {
-               
-                navigator.geolocation.getCurrentPosition(showPosition);
-                  
-            
-            }
-             
-            initialize();
-        </script>
         
     <script type="text/javascript">
 
@@ -185,7 +129,7 @@ navigator.notification.activityStart("pluspay", "updating");
 
    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
-     <div id="map_canvas"></div>
+    
    <div class="uk-grid uk-grid-collapse" id="company_list">
    
 </div>
