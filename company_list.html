@@ -76,6 +76,18 @@ var map;
 
             };
             
+            function add_marker(x,y) {
+                var x=x;
+                var y=y;
+                var myLatLng = {lat: x, lng: y};
+                 marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map
+              });
+
+
+            }
+
             function gps_error(error) {
                 UIkit.modal.alert("GPS가 설정되지 않았습니다. 확인후 다시 이용해주세요.");
               
