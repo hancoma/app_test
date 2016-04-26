@@ -197,11 +197,11 @@ var markers = [];
 
             };
             
-            function add_marker(x,y,img) {
+            function add_marker(x,y, label) {
                
                     var y=y;
                     var position={lat:x, lng: y};
-                    var img=img;
+                    var label=label;
                     
                     
                  var marker = new google.maps.Marker({
@@ -209,7 +209,7 @@ var markers = [];
              position: position,
             animation: google.maps.Animation.DROP,
             title: 'ME',
-             icon: img
+            label: label
             });
                    infowindow.open(map, marker);
                 
