@@ -197,17 +197,19 @@ var markers = [];
 
             };
             
-            function add_marker(x,y) {
+            function add_marker(x,y,img) {
                
                     var y=y;
                     var position={lat:x, lng: y};
+                    var img=img;
                     
                     
                  var marker = new google.maps.Marker({
             map: map,
              position: position,
             animation: google.maps.Animation.DROP,
-            title: 'ME'
+            title: 'ME',
+             icon: image
             });
                    infowindow.open(map, marker);
                 
