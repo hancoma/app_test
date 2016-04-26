@@ -37,11 +37,10 @@
 </style><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtcCZCuREodbWVJSEp4vGjlYsa-lemqA&v=3.exp"></script>
         <script>
             
-
+var map;
             function showPosition(position)
             {
               
-var map;
             var myLatLng;
             var x=37.4945039;
             var y=126.8604171;
@@ -57,7 +56,7 @@ var map;
             mapTypeId: google.maps.MapTypeId.ROADMAP
 
             };
-            map = new google.maps.Map(document.getElementById('map_canvas'),
+            var map = new google.maps.Map(document.getElementById('map_canvas'),
             {
             zoom: 11,
             center: myLatLng,
@@ -78,7 +77,8 @@ var map;
             };
             
             function gps_error(error) {
-              alert("GPS가 설정되지 않았습니다. 확인후 다시 이용해주세요."+error.message);
+                UIkit.modal.alert("GPS가 설정되지 않았습니다. 확인후 다시 이용해주세요.");
+              
             }
             var gps_option={
                 maximumAge:3000,
