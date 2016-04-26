@@ -36,9 +36,19 @@
     }
 </style><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtcCZCuREodbWVJSEp4vGjlYsa-lemqA&v=3.exp"></script>
         <script>
-            
-var map;
-var marker;
+var markers = [];
+            var map;
+            var myLatLng;
+            var x=37;
+            var y=126;
+            var myLatLng = {lat: x, lng: y};
+            var map = new google.maps.Map(document.getElementById('map_canvas'),
+            {
+            zoom: 11,
+            center: {lat: 37.4945039, lng: 126.8604171},
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
             function showPosition(position)
             {
               
@@ -51,18 +61,8 @@ var marker;
             var y=position.coords.longitude;
             }
             var myLatLng = {lat: x, lng: y};
-            var mapOptions = {
-            zoom: 11,
-            center: myLatLng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-
-            };
-            var map = new google.maps.Map(document.getElementById('map_canvas'),
-            {
-            zoom: 11,
-            center: myLatLng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
+            
+            
             var infowindow = new google.maps.InfoWindow({
             content: "MY position"
             });
@@ -78,17 +78,19 @@ var marker;
             };
             
             function add_marker(x,y) {
-                var x=x;
-                var y=y;
-                var myLatLng = {lat: x, lng: y};
-                var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map
-              });
-                marker.setMap(map);
-    
-    // 생성된 마커를 배열에 추가합니다
-    markers.push(marker);
+               
+                    var y=y;
+                    var position={lat:x, lng: y};
+                    
+                    
+                 var marker = new google.maps.Marker({
+            map: map,
+             position: position,
+            animation: google.maps.Animation.DROP,
+            title: 'ME'
+            });
+                   infowindow.open(map, marker);
+                
 
 
             }
