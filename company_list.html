@@ -35,84 +35,7 @@
         height:300px;
     }
 </style><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtcCZCuREodbWVJSEp4vGjlYsa-lemqA&v=3.exp"></script>
-        <script>
-var markers = [];
-            var map;
-            var myLatLng;
-            var x=37;
-            var y=126;
-            var myLatLng = {lat: x, lng: y};
-            var map = new google.maps.Map(document.getElementById('map_canvas'),
-            {
-            zoom: 11,
-            center: {lat: 37.4945039, lng: 126.8604171},
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-
-            function showPosition(position)
-            {
-              
-            var myLatLng;
-            var x=37.4945039;
-            var y=126.8604171;
-
-            if (position.coords.latitude) {
-            var x=position.coords.latitude;
-            var y=position.coords.longitude;
-            }
-            var myLatLng = {lat: x, lng: y};
-            
-            
-            var infowindow = new google.maps.InfoWindow({
-            content: "MY position"
-            });
-            var marker = new google.maps.Marker({
-            map: map,
-            position: myLatLng,
-            animation: google.maps.Animation.DROP,
-            title: 'ME'
-            });
-            infowindow.open(map, marker);
-            
-
-            };
-            
-            function add_marker(x,y) {
-               
-                    var y=y;
-                    var position={lat:x, lng: y};
-                    
-                    
-                 var marker = new google.maps.Marker({
-            map: map,
-             position: position,
-            animation: google.maps.Animation.DROP,
-            title: 'ME'
-            });
-                   infowindow.open(map, marker);
-                
-
-
-            }
-
-            function gps_error(error) {
-                UIkit.modal.alert("GPS가 설정되지 않았습니다. 확인후 다시 이용해주세요.");
-              
-            }
-            var gps_option={
-                maximumAge:3000,
-                timeout:5000,
-                enableHighAccuracy:true
-            }
-            function initialize() {
-               
-                navigator.geolocation.getCurrentPosition(showPosition,gps_error,gps_option);
-                  
-            
-            }
-             
-            
-        </script>
+       
         
     <script type="text/javascript">
 
@@ -232,4 +155,81 @@ navigator.notification.activityStart("pluspay", "updating");
 
                                 </div>
 
-                            </div>
+                            </div> <script>
+var markers = [];
+            var map;
+            var myLatLng;
+            var x=37;
+            var y=126;
+            var myLatLng = {lat: x, lng: y};
+            var map = new google.maps.Map(document.getElementById('map_canvas'),
+            {
+            zoom: 11,
+            center: {lat: 37.4945039, lng: 126.8604171},
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            function showPosition(position)
+            {
+              
+            var myLatLng;
+            var x=37.4945039;
+            var y=126.8604171;
+
+            if (position.coords.latitude) {
+            var x=position.coords.latitude;
+            var y=position.coords.longitude;
+            }
+            var myLatLng = {lat: x, lng: y};
+            
+            
+            var infowindow = new google.maps.InfoWindow({
+            content: "MY position"
+            });
+            var marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            animation: google.maps.Animation.DROP,
+            title: 'ME'
+            });
+            infowindow.open(map, marker);
+            
+
+            };
+            
+            function add_marker(x,y) {
+               
+                    var y=y;
+                    var position={lat:x, lng: y};
+                    
+                    
+                 var marker = new google.maps.Marker({
+            map: map,
+             position: position,
+            animation: google.maps.Animation.DROP,
+            title: 'ME'
+            });
+                   infowindow.open(map, marker);
+                
+
+
+            }
+
+            function gps_error(error) {
+                UIkit.modal.alert("GPS가 설정되지 않았습니다. 확인후 다시 이용해주세요.");
+              
+            }
+            var gps_option={
+                maximumAge:3000,
+                timeout:5000,
+                enableHighAccuracy:true
+            }
+            function initialize() {
+               
+                navigator.geolocation.getCurrentPosition(showPosition,gps_error,gps_option);
+                  
+            
+            }
+             
+            
+        </script>
